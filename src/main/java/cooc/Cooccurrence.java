@@ -40,7 +40,7 @@ public class Cooccurrence extends Configured implements Tool{
 		else if(args[0].equalsIgnoreCase("stripes")){
 			job.setJobName("Stripes-cooccurrence");
 			job.setOutputKeyClass(Text.class);
-			job.setOutputValueClass(MapWritable.class);
+			job.setOutputValueClass(myMapWritable.class);
 			FileOutputFormat.setOutputPath(job, new Path("stripes"));
             job.setMapperClass(Stripes.StripesOccurrenceMapper.class);
             job.setReducerClass(Stripes.StripesReducer.class);
